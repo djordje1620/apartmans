@@ -18,3 +18,13 @@ function changeImg(){
     setTimeout("changeImg()", time);
 }
 window.onload = changeImg;
+
+window.addEventListener('scroll', function(){
+    let navbar = this.document.querySelector('nav');
+    if(window.pageYOffset > 60){
+        navbar.classList.add('sticky');
+    }else{
+        navbar.classList.remove('sticky');
+    }
+});
+
