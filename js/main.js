@@ -28,3 +28,29 @@ window.addEventListener('scroll', function(){
     }
 });
 
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth()+1;
+var todayDate = String(date.getDate()).padStart(2,'0');
+var datePattern = year + '-' + month + '-' + todayDate;
+document.getElementById("d_p").value = datePattern;
+document.getElementById("d_v").value = datePattern;
+
+function kontakt(){
+    var klik = document.getElementById('klik1');
+    if(klik.click){
+      document.getElementById('kontakt').style.display ='flex';
+    }
+    if(klik.click){
+      document.getElementById('lokacija').style.display ='none';
+    }
+  }
+function lokacija(){
+    var klik = document.getElementById('klik2');
+    if(klik.click){
+      document.getElementById('kontakt').style.display='none';
+    }
+    if(klik.click){
+      document.getElementById('lokacija').style.display='block';
+    }
+  }
