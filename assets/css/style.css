@@ -95,7 +95,7 @@
     text-align: center;
 }
 nav.sticky{
-    background-color: rgba(0, 0, 0, 0.75) !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
     transition: 0.5s;
     color: rgb(120, 128, 131);
     z-index: 4;

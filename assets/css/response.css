@@ -88,11 +88,14 @@
         z-index: 3;
         width:100%;
         height: 100vh;
-        background-color:rgba(0,0,0,0.75);
+        background-color:rgba(0, 0, 0, 0.85);
         top:69px;
         left:-100%;
         text-align: center;
         transition:all .8s;
+    }
+    nav{
+        z-index: 4;
     }
     #meni ul li{
         display: block;
@@ -104,13 +107,13 @@
         color: white;
     }
     #meni ul.show{
-        z-index: 3;
+        z-index: 6;
         left:0;
     }
     .text-1 table tr td{
         padding:5px 3px;
      }
-     .text-1 p{
+    .text-1 p{
         padding: 0px 0px;
         margin-top:10px;
     }
@@ -222,7 +225,8 @@
         font-size: 13px !important;
     }
     div.main-1 h2{
-        font-size: 24px !important;
+        font-size: 22px !important;
+        padding-bottom: 10px;
     }
     div.main-1 h4{
         font-size: 16px;
@@ -234,7 +238,7 @@
         height: 240px;
     }
     .heig-main-11{
-        height: 280px;
+        height: 320px;
     }
     .wid-main4{
         width: 100%;
@@ -247,8 +251,11 @@
     .padd-4{
         padding:7px 3px;
     }
-    div.text-1 p{
-        font-size: 10px !important;
+    .wid-main_1{
+        width: 100%;
+    }
+    .size-h2{
+        font-size: 15px !important;
     }
      a.btn{
         font-size: 10px;
@@ -257,5 +264,10 @@
     .fa-cc-mastercard,.fa-cc-visa,.fa-cc-diners-club,.fa-cc-paypal{
         margin-right: 10px;
         font-size: 15px;
+    }
+}
+@media(max-width:376px){
+    .heig-main-3{
+        height: 440px;
     }
 }

@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function(){
     let navbar = this.document.querySelector('nav');
-    if(window.pageYOffset > 60){
+    if(window.pageYOffset > 20){
         navbar.classList.add('sticky');
     }else{
         navbar.classList.remove('sticky');
