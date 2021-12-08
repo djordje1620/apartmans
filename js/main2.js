@@ -14,18 +14,20 @@ var todayDate = String(date.getDate()).padStart(2,'0');
 var datePattern = year + '-' + month + '-' + todayDate;
 document.getElementById("d_p").defaultValue = datePattern;
 document.getElementById("d_v").defaultValue = datePattern;
-
-function ispisDatuma(){
-     var datumPreuzIndex = document.getElementById('d_p').value;
-     console.log(datumPreuzIndex);
-     //document.getElementById('datum_p').value = datumPreuzIndex;
-     localStorage.getElementById('datum_p').value = datumPreuzIndex;
- }
- 
-// var datumPreuzimanja = document.getElementById("d_p").value;
-// console.log(datumPreuzimanja);
-
-// if(datumPreuzimanja != datePattern)
+// var x;
+// function ispisDatuma(){
+//    x =  document.getElementById("d_p").value;
+// }
+// if(x != undefine)
 // {
-    
+//     console.log(x);
+// }
+// document.getElementById("d_pp").value = x;
+
+// function provera(){
+//     var vreme = document.getElementById("vr_preuzimanja");
+//     var x = vreme.options[vreme.selectedIndex].text;
+//     var y = vreme.options[vreme.selectedIndex].value;
+//     console.log("Text svojstvo ima vrednost: " + x);
+//     console.log("Value svojstvo ima vrednost: " + y);
 // }

@@ -291,12 +291,11 @@
                    <div class="main-red padd-10 flex_s_b ">
                     <div class="main-kolona flex_s_a ">
                         <p><i class="far fa-calendar-alt"></i> Datum preuzimanja</p>
-                        <input type="date" name="datum_preuz" id="datum_p" />
-                       
+                        <input type="date" name="datum_preuz" id="d_pp"  />
                     </div>
                     <div class="main-kolona flex_s_b">
                         <p><i class="far fa-clock"></i> Vreme preuzimanja</p>
-                        <select id="vremeVracanja">
+                        <select id="vr_preuzimanja">
                             <option value="0">00:00</option>
                             <option value="1">01:00</option>
                             <option value="2">02:00</option>
@@ -322,6 +321,7 @@
                             <option value="22">22:00</option>
                             <option value="23">23:00</option>
                     </select>
+                    <input type="button" value="posalj" onClick="provera();" />
                     </div>
                    </div>
                    <hr/>
@@ -335,7 +335,7 @@
                    <div class="main-red flex_s_a">
                     <div class="main-kolona flex_s_b padd-10">
                         <p><i class="far fa-calendar-alt"></i> Datum Vraćanja</p>
-                        <input type="date" name="datum_vraca" id="datum_v" />
+                        <input type="date" name="datum_vraca" id="d_v" />
                     </div>
                     <div class="main-kolona flex_s_b padd-10">
                         <p><i class="far fa-clock"></i> Vreme preuzimanja</p>
