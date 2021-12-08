@@ -6,75 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rent a car</title>
     <script src="https://kit.fontawesome.com/932b315ef8.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
     <link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/response.css">
 </head>
 <body>
     <script type="text/javascript" src="js/main.js"> </script>
+    <script type="text/javascript" src="js/main2.js"> </script>
+    <script>
+        $(document).ready(function(){
+            $('#icon').click(function(){
+                $('ul').toggleClass('show')
+            });
+        });   
+        $(document).ready(function(){
+            $('.icon1').click(function(){
+                $('ul').toggleClass('show')
+            });
+        }); 
+        
+    </script>
+
     <div id="back-img">
-        <img name="slide" class="img-sld img-sld-radius" alt="Slider slika"/>
+        <img name="slide" class="img-sld" alt="Slider slika"/>
         <nav>
             <div id="logo">
                 <h2><a href="index.html"><span class="h-1">R</span><span class="h-2">ent</span></a></h2>
             </div>
             <div id="meni">
                 <ul>
-                    <li><a href="index.html" class="activ">Početna</a></li>
-                    <li><a href="">Vozila</a></li>
-                    <li><a href="#naslov_opsti-uslovi">Uslovi zakupa</a></li>
-                    <li><a href="#naslov1">O nama</a></li>
-                    <li><a href="#kontakt1">Kontakt</a></li>
+                    <li><a href="index.html" class="activ icon1">Početna</a></li>
+                    <li><a href="assets/pages/vozila.html" class="icon1">Vozila</a></li>
+                    <li><a href="#naslov_opsti-uslovi" class="icon1">Uslovi zakupa</a></li>
+                    <li><a href="#naslov1" class="icon1">O nama</a></li>
+                    <li><a href="#kontakt1" class="icon1">Kontakt</a></li>
                 </ul>
             </div>
+            <label id="icon">
+                <i class="fas fa-bars"></i>
+            </label>
         </nav>
-        <div id="text-1">
+        <div id="text-1" class="disp_none">
             <h1>Rent a car Beograd</h1>
             <h5>Jeftino iznajmljivanje rent a car vozila - cena od 15 €/dan</h5>
         </div>
         <div class="blok-1">
             <form action="GET">
-                <table>
-                    <tr class="tr-1">
-                        <td>
+                <div class="main-red flex_s_b main-kolona21">
+                    <div class="main-red main-kolona21">
+                        <div class="main-kolona padd-5">
                             <label for="Datum_Preuzimanja">Datum preuzimanja</label>
-                        </td>
-                        <td>
-                            <label for="Vreme">Vreme preuzimanja</label>
-                        </td>
-                        <td>
-                            <label for="Datum_Vracanja">Datum vraćanja</label>
-                        </td>
-                        <td>
-                            <label for="Vreme">Vreme vracanja</label>
-                        </td>
-                    </tr>
-                    <tr class="tr-2">
-                        <td>
                             <input type="date" name="Datum_Preuzimanja" id="d_p" />
-                        </td>
-                        <td>
+                        </div>
+                        <div class="main-kolona padd-5">
+                            <label for="Vreme">Vreme preuzimanja</label>
                             <select id="vremePreuzimanja">
-                                <option value="1">00:00</option>
+                                <option value="0">00:00</option>
+                                <option value="1">01:00</option>
+                                <option value="2">02:00</option>
+                                <option value="3">03:00</option>
+                                <option value="4">04:00</option>
+                                <option value="5">05:00</option>
+                                <option value="6">06:00</option>
+                                <option value="7">07:00</option>
+                                <option value="8">08:00</option>
+                                <option value="9" selected>09:00</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00</option>
+                                <option value="13">13:00</option>
+                                <option value="14">14:00</option>
+                                <option value="15">15:00</option>
+                                <option value="16">16:00</option>
+                                <option value="17">17:00</option>
+                                <option value="18">18:00</option>
+                                <option value="19">19:00</option>
+                                <option value="20">20:00</option>
+                                <option value="21">21:00</option>
+                                <option value="22">22:00</option>
+                                <option value="23">23:00</option>
                             </select>
-                        </td>
-                        <td>
+                        </div>
+                        <div class="main-kolona padd-5">
+                            <label for="Datum_Vracanja">Datum vraćanja</label>
                             <input type="date" name="Datum_Vracanja" id="d_v" />
-                        </td>
-                        <td>
-                            <select id="vremePreuzimanja">
-                                <option value="1">00:00</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+                        </div>
+                        <div class="main-kolona padd-5">
+                            <label for="Vreme">Vreme vracanja</label>
+                            <select id="vremeVracanja">
+                                <option value="0">00:00</option>
+                                <option value="1">01:00</option>
+                                <option value="2">02:00</option>
+                                <option value="3">03:00</option>
+                                <option value="4">04:00</option>
+                                <option value="5">05:00</option>
+                                <option value="6">06:00</option>
+                                <option value="7">07:00</option>
+                                <option value="8">08:00</option>
+                                <option value="9" selected>09:00</option>
+                                <option value="10">10:00</option>
+                                <option value="11">11:00</option>
+                                <option value="12">12:00</option>
+                                <option value="13">13:00</option>
+                                <option value="14">14:00</option>
+                                <option value="15">15:00</option>
+                                <option value="16">16:00</option>
+                                <option value="17">17:00</option>
+                                <option value="18">18:00</option>
+                                <option value="19">19:00</option>
+                                <option value="20">20:00</option>
+                                <option value="21">21:00</option>
+                                <option value="22">22:00</option>
+                                <option value="23">23:00</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="main-kolona padd-5 ">
+                        <a href="assets/pages/vozila.html"><input type="button" value="Pretraga" class="btn-id" onclick="ispisDatuma()"/></a> 
+                    </div>
+                </div>
             </form>
-            <div>
-                <input type="button" value="Posalji"id="btn-id" />
-            </div>
         </div>
     </div>
      <div id="main">
-       <div class="main-1 main-1_margin-top bg-main wid-main img-sld-radius">
+       <div class="main-1 bg-main wid-main marg-50">
             <h2 id="naslov1">Rent a car - Beograd | O nama</h2>
             <hr class="hr-1"/>
             <p>Želite da rentirate novo i pouzdano rent a car vozilo?</p>
@@ -93,11 +149,11 @@
                 Rezervišite rent a car već danas. Pozovite nas odmah na: <span class="clr-blck">+38169 37 63 31</span> 
             </p>
        </div>
-       <div class="main-1 main-1_margin-top bg1-main main-flex img-sld-radius">
-        <div class="img-1">
+       <div class="main-1 main-1_margin-top bg1-main main-flex main-kolona21 ">
+        <div class="img-1 wid-main3">
             <img src="assets/img/img4.jpg" alt="slika kao prikaz korisnika">
         </div>
-        <div class="text-1">
+        <div class="text-1 wid-main3 heig-main-11">
             <h2>Rent a car Beograd | Zašto baš mi?</h2>
             <ul>
                 <li><i class="far fa-check-square"></i>Preuzimanje vozila na aerodromu</li>
@@ -108,17 +164,17 @@
                 <li><i class="far fa-check-square"></i>Zimske gume i lanci</li>
                 <li><i class="far fa-check-square"></i>Neograničena kilometraža</li>
             </ul>
-            <a href="" class="btn">REZERVIŠITE <i class="fas fa-arrow-right"></i></a>
+            <a href="assets/pages/vozila.html" class="btn">REZERVIŠITE <i class="fas fa-arrow-right"></i></a>
         </div>
        </div>
-       <div class="main-1 main-flex ">
+       <div class="main-1 main-flex main-2-padd">
            <div class="main-2 main-flex_1">
                <div class="main-circle bg-main main-flex_1">
                 <i class="fas fa-car"></i>
                </div>
                <p>Nova vozila</p>
            </div>
-           <div class="main-2 main-flex_1">
+           <div class="main-2 main-flex_1 disp_none">
                <div class="main-circle bg-main main-flex_1">
                 <i class="fas fa-map-marked"></i>
                </div>
@@ -137,8 +193,8 @@
                <p>Dostava 24/7</p>
            </div>
        </div>
-       <div class="main-1 wid-main_1 c-main-1" id="naslov_opsti-uslovi">
-           <h2 class="clr-blck">Uslovi zakupa</h2>
+       <div class="main-1 wid-main_1 c-main-1 txt-col-white" id="naslov_opsti-uslovi">
+           <h2>Uslovi zakupa</h2>
            <h4 class="main-1_margin-top">Opšti uslovi</h4>
            <ul>
                <li>Minimum 21 godina starosti</li>
@@ -147,7 +203,7 @@
                <li>Minimalna dužina najma je 1 dan (24 časa)</li>
            </ul>
            <p>Vreme preuzimanja i vraćanja vozila moraju biti isti. Tolerišemo 60 minuta kašnjenja.</p>
-           <p>Po isteku prekoračenja od 60 minuta, DeltaTop Rent a Car zadržava pravo da naplati još jedan dan najma.</p>
+           <p>Po isteku prekoračenja od 60 minuta, Rent a car zadržava pravo da naplati još jedan dan najma.</p>
            <h4>Preuzimanje i vraćanje vozila</h4>
            <p>
             Vozilo se može preuzeti i vratiti u jednoj od naših poslovnica a moguća je i dostava odnosno vraćanje izvan poslovnice (hotel, kućna adresa i sl.).
@@ -163,30 +219,35 @@
            <h4>Podrška na putu</h4>
            <p>Ukoliko odlučite da iznajmite jedno od vozila iz našeg voznog parka, imaćete podršku 24/7 na teritoriji cele Evrope.</p>
        </div>
-       <div class="main-1 main-1_margin-top bg1-main main-flex img-sld-radius">
-        <div class="text-1">
+       <div class="main-1 main-1_margin-top bg1-main main-flex main-kolona21 ">
+        <div class="text-1 wid-main3 heig-main-12">
             <h2>Iznajmite luksuzan automobil sa vozačem</h2>
             <p>Bilo da je poslovni sastanak, provod, venčanje ili matura, ostavite dobar utisak gde god da se pojavite. Naša renta car agencija je tu da izađe u susret svim vašim zahtevima.</p>
             <p>Kao posebnu uslugu nudimo iznajmljivanje luksuznih vozila sa vozačem. U ponudi je automobil Mercedes s klasa. Cene su dostupne na zahtev.</p>
         </div>
-        <div class="img-1 ">
-            <img src="assets/img/img5.jpg" class="img-sld-radius" alt="slika kao prikaz korisnika">
+        <div class="img-1 wid-main3">
+            <img src="assets/img/img5.jpg" alt="slika kao prikaz korisnika">
         </div>
        </div>
-       <div class="main-1 " id="kontakt1">
+       <div class="main-1 txt-col-white heig-main-1 padd-4" id="kontakt1">
             <div class="main-flex">
-               <div> <a class="btn border_2" id="klik1" onclick="kontakt()">Kontakt </a></div>
-               <div> <a class="btn border_2" id="klik2" onclick="lokacija()">Lokacija </a></div>
+               <div> <a class="btn border_1 btn-1" id="klik1" onclick="kontakt()">Kontakt </a></div>
+               <div> <a class="btn border_1 btn-1" id="klik2" onclick="lokacija()">Lokacija </a></div>
             </div>
-            <div class="main-3 main-flex bg-main img-sld-radius" id="kontakt">
-                <div class="text-1 txt-col-blk">
+            <div class="main-3 main-flex txt-col-white main-kolona21 " id="kontakt">
+                <div class="text-1 txt-col-white wid-main3">
                     <h3 class="clr-blck">Kontaktirajte nas</h3>
                     <p>
                         Rezervacije automobila ili slanje poruka možete izvršiti i preko ove online forme.
                         Na sve poruke odgovaramo u najkraćem mogućem roku.
                     </p>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> 0654346611</li>
+                        <li><i class="fas fa-envelope"></i> rentacarbeograd@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Bulevar kralja Aleksandra 334, Beograd</li>
+                    </ul>
                 </div>
-                <div class="text-1 txt-col-blk border_1 img-sld-radius">
+                <div class="text-1 bg-text-1 wid-main3 wid-main4 padd-10 padd-4">
                     <form action="GET">
                        <table>
                            <tr>
@@ -202,10 +263,13 @@
                             <td><input type="text" name="email" id="email"></td>
                         </tr>
                         <tr>
-                            <td><label for="ime">Poruka:</label></td>
+                            <td ><label for="ime">Poruka:</label></td>
                             <td><textarea name="" id="" cols="30" rows="3"></textarea></td>
                         </tr>
                        </table>
+                       <div class="main-red">
+                            <input type="button" value="Pošalji poruku" class="btn-id" /> 
+                       </div>
                     </form>
                 </div>
             </div>
@@ -213,13 +277,39 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.374616255452!2d20.500732115497712!3d44.79355357909875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7083dbd4577f%3A0x6ea45b642f53f139!2z0JHRg9C70LXQstCw0YAg0LrRgNCw0ZnQsCDQkNC70LXQutGB0LDQvdC00YDQsCAzMzQsINCR0LXQvtCz0YDQsNC0!5e0!3m2!1ssr!2srs!4v1606257710601!5m2!1ssr!2srs" width="100%" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>            </div>
        </div>
        <div id="fix-img">
-            <div class="blok-1 gradient-blok-1 center ">
+            <div class="blok-1 gradient-blok-1 center blok-1_wid wid-main4">
                 <h3 class="txt-col">Pronađite odgovarajuće rent a car vozilo</h5>
-                    <a href="" class="btn">Rezervišite <i class="fas fa-arrow-right"></i></a>
+                    <a href="assets/pages/vozila.html" class="btn">Rezervišite <i class="fas fa-arrow-right"></i></a>
             </div>  
         </div>
+        <footer>
+            <div class="main-1 footer-flex">
+                <div class="text-1 heig-main-12">
+                    <p class="clr-siz-p">Rent a car Beograd možete platiti gotovinom ili elektronskim karticama</p>
+                    <p><i class="fab fa-cc-mastercard"></i><i class="fab fa-cc-visa"></i><i class="fab fa-cc-diners-club"></i><i class="fab fa-cc-paypal"></i></p>
+                    <p>Rent a car pruža iznajmljivanje pouzadnih vozila poznatih svetskih proizvođača uz najbolji odnos cena – kvalitet. Rentiranje vozila je definisano</p>
+                    <a href="assets/pages/vozila.html" class="btn">Rezervišite <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="text-1 main-flex_1 clr-siz-p heig-main-12">
+                    <h4>Kontakt</h4>
+                    <p class="p-main-1">Rent a Car Beograd</p>
+                    <p class="p-main-1">Bulevar kralja Aleksandra 334, Beograd</p>
+                    <p class="p-main-1">Beograd 11000, Srbija</p>
+                    <p class="p-main-1">0654346611</p>
+                    <p class="p-main-1">Radno vreme:</p>
+                    <p class="p-main-1"> Pon – Pet: 08:00 – 19:00</p>
+                    <p class="p-main-1">Sub: 08:00 – 12:00</p>  
+                    <p class="p-main-1">Informacije:</p>
+                    <p class="p-main-1"> Svaki dan od 08:00 – 19:00</p>
+                </div>
+            </div>
+            <div class="foot">
+                <p>Copyright © Đorđe Marković 2021  </p>
+            </div>
+        </footer>
     </div>
-     
+
+    <script type="text/javascript" src="js/main2.js"> </script>
      <script type="text/javascript" src="js/main.js"> </script>
 </body>
 </html>

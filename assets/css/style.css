@@ -9,6 +9,7 @@
     width: 100%;
     height: 800px;
     position: relative;
+    background-color:#494848;
 }
 .img-sld{
     width: 100%;
@@ -16,9 +17,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.img-sld-radius{
-    border-radius: 0% 0% 15% 0%;
 }
 #fix-img{
     background-image: url(../img/img6.jpg);
@@ -41,7 +39,6 @@
     position: absolute;
     top:30% !important; 
     height:  40% !important;    
-    z-index: 2;
 }
 .gradient-blok-1{
     background-color: none;
@@ -50,8 +47,8 @@
 .blok-1{
     position: absolute;
     bottom:0%;
-    left: 21%;
-    width: 58%;
+    left: 20%;
+    width: 60%;
     background-color: rgba(0, 0, 0, 0.85);
     padding: 30px;
     color: rgb(156, 146, 4);
@@ -67,7 +64,7 @@
     padding: 0px 5px;
 }
 #meni{
-    flex:50%;
+    flex:60%;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -98,10 +95,10 @@
     text-align: center;
 }
 nav.sticky{
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.75) !important;
     transition: 0.5s;
     color: rgb(120, 128, 131);
-    z-index: 1;
+    z-index: 4;
 }
 nav.sticky #meni ul li a{
     color: white;
@@ -120,7 +117,7 @@ nav{
     align-items: center;
 }
 #logo{
-    flex:50%;
+    flex:40%;
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat Alternates', sans-serif;
@@ -155,20 +152,26 @@ span.h-2:hover{
 }
 #main{
     width: 100%;
-    height: 600px;
+    background-color:#5a5858;
+    padding-top:50px;
+    color: white;
 }
-input[type=date]{
-    background-color: rgb(107, 88, 88);
-    color: chartreuse;
+input[type=date],select{
+    background-color:#e4e3e3;
+}
+.btn-id{
+    padding: 3px 10px;
+}
+.btn-id:hover{
+    background-color:rgb(190, 117, 6); 
+    transition: 0.3s;
 }
 .main-1{
     text-align: left;
     padding: 35px;
     margin-right: auto;
+    color: black;
     margin-left: auto;
-}
-.main-1_margin-top{
-    margin-top: 50px;
 }
 .main-1 ul li{
     margin-left: 30px;
@@ -199,12 +202,12 @@ input[type=date]{
     background-color: rgb(143, 64, 0);
 }
 .c-main-1 p{
-    color: #615f5f;
+    color: #c5c5c5;
 }
 .main-flex{
     display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content:space-between;
 }
 .img-1{
     display: flex;
@@ -218,8 +221,7 @@ input[type=date]{
 .text-1{
     margin: 10px;
     text-align: left;
-    flex:50%;
-    width: 450px;
+    width:50%;
     color: white;
     height: 450px;
     padding: 5px;
@@ -242,6 +244,13 @@ a.btn{
     background-color: rgba(0, 0, 0, 0.3);
     margin: 0px 35px !important;
 }
+.btn-1{
+    background-color:rgb(143, 64, 0) !important;
+}
+.btn-1:hover{
+    background-color:rgba(143, 64, 0, 0.7) !important;
+    transition: 0.5s;
+}
 .text-1 p{
     padding: 0px 30px;
     margin-top:40px;
@@ -258,8 +267,11 @@ a.btn:hover{
 }
 .main-circle:hover{
     background-color: black;
-    color: rgb(190, 117, 6);
     transition: 0.5s;
+    color: rgb(190, 117, 6) !important;
+}
+.txt-col-white{
+    color: white !important;
 }
 .main-flex_1{
     display: flex;
@@ -275,6 +287,11 @@ a.btn:hover{
 }
 .fa-car,.fa-map-marked,.fa-hand-holding-medical,.fa-route{
     font-size: 45px;
+    color: #1f1b1b;
+}
+.fa-car:hover,.fa-map-marked:hover,.fa-hand-holding-medical:hover,.fa-route:hover{
+    color: rgb(190, 117, 6) !important;
+    transition: 0.5s;
 }
 .main-2{
     width: 100%;
@@ -291,15 +308,136 @@ a.btn:hover{
 }
 .border_1{
     border:2px solid black;
+    background-color: rgb(190, 117, 6);
 }
-.border_2{
-    border:2px solid rgb(190, 117, 6);
+.bg-text-1{
+    background-color: rgb(63, 55, 55);
 }
 .text-1 table tr td{
     padding: 20px;
+    color: white;
 }
 .text-1 table tr td input[type=text]{
     border-radius: 2px;
     padding: 2px;
-    background-color: #c2c2c2;
+}
+
+.fa-phone,.fa-envelope,.fa-map-marker-alt{
+    margin-right: 10px;
+    color: rgb(190, 117, 6);
+    font-size: 20px;
+}
+.footer-flex{
+    display: flex;
+    margin-bottom: 0px !important;
+    justify-content:space-around;
+    background-image:  linear-gradient(to top,rgb(14, 13, 13),rgb(54, 44, 44),rgb(104, 73, 26),rgb(143, 111, 8));
+}
+.p-main-1{
+    padding: 10px !important;
+    margin: 0px !important;
+}
+.fa-cc-mastercard,.fa-cc-visa,.fa-cc-diners-club,.fa-cc-paypal{
+    color: white;
+    margin-right: 20px;
+    font-size: 32px;
+}
+.clr-siz-p{
+    color: white;
+}
+.foot{
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(14, 13, 13);
+    color: #c2c2c2;
+}
+.foot p{
+    padding: 0px;
+    margin: 0px;
+}
+#back-v{
+    width: 100%;
+    color: white;
+    background-color:#494848;
+}
+.padd-main{
+    width:94%;
+    text-align: center;
+    padding: 40px 0px;
+    margin: 0 auto;
+}
+.m-shadow{
+    box-shadow:0 0 20px rgb(73, 72, 72), 0 0 40px #caab8ee0, 0 0 20px #c2c2c2;
+}
+.pad-100{
+    padding-top: 120px;
+}
+.main-kolona{
+    display: flex;
+    flex-direction: column;
+}
+.main-red{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.flex_s_b{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex_s_a{
+    justify-content: space-around;
+}
+.flex_f_s{
+    justify-content: flex-start;
+}
+.padd-10{
+    padding: 20px;
+}
+.padd-5{
+    padding: 10px;
+}
+.marg-50{
+    margin-bottom: 50px;
+}
+.voz-blok{
+    width: 22%;
+    height: 350px;
+    font-size: 14px;
+    border:2px solid black;
+    background-color:rgb(143, 64, 0) ;
+    box-shadow:0 0 10px rgb(37, 37, 37), 0 0 20px #703b09e0, 0 0 20px rgb(255, 153, 0);
+}
+.voz-blok:hover{
+    box-shadow:0 0 20px rgb(73, 72, 72), 0 0 40px #9e642ee0, 0 0 40px #c2c2c2;
+    transition: 0.5s;
+}
+.padd-main h2{
+    padding: 20px 0px 30px 0px;
+    letter-spacing: 5px;
+    font-size: 38px;
+}
+.voz-blok h4{
+    margin: 10px auto;
+    font-size: 18px;
+}
+.voz-blok img{
+    width: 100%;
+    height: 180px;
+}
+.voz-blok img:hover{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    transition: 0.4s;
+}
+.fa-map-marker,.fa-calendar-alt,.fa-clock{
+    color:rgb(184, 84, 2);
+}
+#icon {
+    color: white;
+    font-size: 30px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none; 
 }

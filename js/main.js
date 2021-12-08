@@ -19,23 +19,6 @@ function changeImg(){
 }
 window.onload = changeImg;
 
-window.addEventListener('scroll', function(){
-    let navbar = this.document.querySelector('nav');
-    if(window.pageYOffset > 60){
-        navbar.classList.add('sticky');
-    }else{
-        navbar.classList.remove('sticky');
-    }
-});
-
-var date = new Date();
-var year = date.getFullYear();
-var month = date.getMonth()+1;
-var todayDate = String(date.getDate()).padStart(2,'0');
-var datePattern = year + '-' + month + '-' + todayDate;
-document.getElementById("d_p").value = datePattern;
-document.getElementById("d_v").value = datePattern;
-
 function kontakt(){
     var klik = document.getElementById('klik1');
     if(klik.click){

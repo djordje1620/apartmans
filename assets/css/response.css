@@ -1,0 +1,252 @@
+@media (max-width:1048px){
+    nav{
+        padding: 8px;
+    }
+    #meni ul li a{
+        font-size:16px ;
+        margin-right:6px;
+        flex:75%;
+    }
+    #logo{
+        flex:25%;
+    }
+    span.h-1{
+        margin-left: 8px;
+        font-size: 28px;
+    }
+    span.h-2{
+        color: white;
+        font-size: 26px;
+    }
+    #text-1{
+        font-size: 17px!important;
+    }
+    #text-1 h1{
+        font-size: 21px;
+    }
+    .blok-1{
+        left: 10%;
+        width: 80%;
+        padding: 3px;
+        font-size: 14px;
+    }
+    table.tabela tr td{
+        font-size: 13px;
+    }
+    .main-1{
+        padding: 20px;
+    }
+    .img-1{
+        height: 350px;
+        width: 50%;
+    }
+    .text-1{
+        height: 350px;
+        width: 50%;
+    }
+    .text-1 h2{
+       font-size: 18px;
+    }
+    .text-1 ul li{
+        font-size: 14px;
+        padding: 1px;
+        margin-top: 3px;
+    }
+    
+}
+@media (max-width:1024px){
+    .main-kolona2{
+        display: flex;
+        flex-direction: column;
+    }
+    .img-1 img{
+        width: 100%;
+        height: 300px;
+    }
+    .main-3{
+        width: 100%;
+        padding: 5px;
+        margin:15px auto;
+        height: 400px !important;
+    }
+    .text-1 table tr td{
+       padding:7px;
+    }
+    table tr td textarea{
+        width: 200px;
+    }
+    .p-main-1{
+            padding: 3px !important;
+    }
+}
+@media(max-width:768px){
+    #icon{
+        display: block;
+    }
+    #meni ul{
+        position: fixed;
+        z-index: 3;
+        width:100%;
+        height: 100vh;
+        background-color:rgba(0,0,0,0.75);
+        top:69px;
+        left:-100%;
+        text-align: center;
+        transition:all .8s;
+    }
+    #meni ul li{
+        display: block;
+        margin: 25px;
+        line-height: 25px;
+    }
+    #meni ul li a{
+        font-size:20px;
+        color: white;
+    }
+    #meni ul.show{
+        z-index: 3;
+        left:0;
+    }
+    .text-1 table tr td{
+        padding:5px 3px;
+     }
+     .text-1 p{
+        padding: 0px 0px;
+        margin-top:10px;
+    }
+    .main-kolona2{
+        display: flex;
+        flex-direction: column;
+    }
+    .blok-1{
+        left: 10%;
+        width: 80%;
+        padding: 1px;
+        font-size: 10px;
+    }
+    .blok-1 h3{
+        font-size: 20px;
+    }
+    .btn-id{
+        margin:30px auto;
+    }
+}
+@media(max-width:560px){
+    .disp_none{
+        display: none;
+    }
+    .main-kolona21{
+        display: flex;
+        flex-direction: column;
+    }
+    .blok-1{
+        bottom:10%;
+        left: 20%;
+        width: 60%;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .wid-main{
+        width: 90%;
+    }
+    .wid-main3{
+        width: 100%;
+    }
+    .heig-main-1{
+        height: 700px;
+    }
+    .btn-id{
+        margin:0 auto;
+    }
+    .text-1 table{
+        margin:0 auto;
+        align-items: center;
+    }
+    .main-circle{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .main-2 p{
+        font-size: 15px;
+    }
+    .main-2-padd{
+        padding: 5px 0px;
+        margin: 20px auto;
+    }
+    .blok-1_wid{
+        width: 100%;
+        left: 0;
+        position: absolute;
+        padding: 2px;
+    }
+    .blok-1 h3{
+        font-size: 16px;
+    }
+}
+@media(max-width:426px){
+    .main-circle{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .main-2 p{
+        font-size: 13px;
+    }
+    .fa-car,.fa-map-marked,.fa-hand-holding-medical,.fa-route{
+        font-size: 30px;
+    }
+    .disp_none{
+        display: none;
+    }
+    .blok-1{
+        bottom:10%;
+        left: 10%;
+        width: 80%;
+        padding: 10px;
+        font-size: 12px;
+    }
+    #naslov1{
+        font-size: 20px;
+    }
+    div.main-1 p{
+        font-size: 13px !important;
+    }
+    div.main-1 h2{
+        font-size: 24px !important;
+    }
+    div.main-1 h4{
+        font-size: 16px;
+    }
+    div.main-1 ul li{
+        font-size: 13px;
+    }
+    .heig-main-12{
+        height: 240px;
+    }
+    .heig-main-11{
+        height: 280px;
+    }
+    .wid-main4{
+        width: 100%;
+        left:0;
+    }
+    div.wid-main4 a.btn{
+        padding:5px 10px;
+        margin: 0px 10px !important;
+    }
+    .padd-4{
+        padding:7px 3px;
+    }
+    div.text-1 p{
+        font-size: 10px !important;
+    }
+     a.btn{
+        font-size: 10px;
+         padding:5px 10px;
+    }
+    .fa-cc-mastercard,.fa-cc-visa,.fa-cc-diners-club,.fa-cc-paypal{
+        margin-right: 10px;
+        font-size: 15px;
+    }
+}
