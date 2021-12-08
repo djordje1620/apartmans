@@ -78,6 +78,14 @@
     .p-main-1{
             padding: 3px !important;
     }
+    .padd-main
+    {
+        width: 100%;
+    }
+    .padd-10{
+        padding: 5px;
+        padding-top: 10px;
+    }
 }
 @media(max-width:768px){
     #icon{
@@ -110,6 +118,9 @@
         z-index: 6;
         left:0;
     }
+    nav.rgba{
+        background-color: rgba(0, 0, 0, 0.85);
+    }
     .text-1 table tr td{
         padding:5px 3px;
      }
@@ -132,6 +143,23 @@
     }
     .btn-id{
         margin:30px auto;
+    }
+    .m_k{
+        flex-direction: column;
+    }
+    .voz-blok{
+        margin: 10px auto;
+        width: 80%;
+        font-size: 17px;
+    }
+    .voz-blok img{
+        width: 60%;
+    }
+    div.main-red{
+        font-size: 12px;
+    }
+    .padd-main h2{
+        font-size: 32px;
     }
 }
 @media(max-width:560px){
@@ -185,6 +213,17 @@
     }
     .blok-1 h3{
         font-size: 16px;
+    }
+    .m-kolona{
+        flex-direction: column-reverse;
+    }
+    .voz-blok img{
+        width: 70%;
+    }
+    .padd-main h2{
+        font-size: 26px;
+    }.padd-main h5{
+        font-size: 16px !important;
     }
 }
 @media(max-width:426px){
@@ -265,6 +304,13 @@
         margin-right: 10px;
         font-size: 15px;
     }
+    .voz-blok img{
+        width: 100%;
+    }
+    .voz-blok{
+        width: 90%;
+        height: 320px;
+    } 
 }
 @media(max-width:376px){
     .heig-main-3{
