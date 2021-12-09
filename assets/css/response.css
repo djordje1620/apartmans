@@ -161,6 +161,9 @@
     .padd-main h2{
         font-size: 32px;
     }
+    .eror{
+        font-size: 12px !important;
+    }
 }
 @media(max-width:560px){
     .disp_none{
@@ -311,6 +314,9 @@
         width: 90%;
         height: 320px;
     } 
+    .eror{
+        font-size: 10px !important;
+    }
 }
 @media(max-width:376px){
     .heig-main-3{

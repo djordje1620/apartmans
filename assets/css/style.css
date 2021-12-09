@@ -441,8 +441,38 @@ a.btn:hover{
     cursor: pointer;
     display: none; 
 }
-.boja_lab{
-    color: rgb(184, 84, 2);
-    font-size: 20px !important;
-    transition: 0.9s;
+div.main-kolona p{
+    margin: 0px;
+}
+.eror{
+    color: rgb(143, 111, 8);
+    font-size: 14px !important;
+    transition: 0.2s;
+    margin-top: 2px !important;
+}
+#dugme{
+    margin: 5px auto;
+    padding: 3px 6px;
+    background-color: black;
+    color: white;
+}
+.badForm-border{
+    border: 2px solid red;
+    box-shadow:0 0 10px rgb(177, 31, 31), 0 0 10px #962b2be0, 0 0 10px #c94848;
+}
+.goodForm-border{
+    border: 2px solid green;
+    box-shadow:0 0 10px rgb(29, 124, 11), 0 0 10px #037903e0, 0 0 10px #284206;
+}
+.pos-rel{
+    position: relative;
+}
+.blok-rez{
+    background-color: rgb(143, 111, 8);
+    position: absolute;
+    width: 50%;
+    height: 400px;
+    left: 25%;
+    top: 25%;
+    border-radius: 10%;
 }

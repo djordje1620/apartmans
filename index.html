@@ -46,7 +46,7 @@
                     <li><a href="#naslov1" class="icon1">O nama</a></li>
                     <li><a href="#naslov_opsti-uslovi" class="icon1">Uslovi zakupa</a></li>
                     <li><a href="#kontakt1" class="icon1">Kontakt</a></li>
-                    <li><a href="assets/pages/vozila.html" class="icon1">Vozila</a></li>
+                    <li><a href="assets/pages/vozila.html" class="icon1" id="vozila">Vozila</a></li>
                 </ul>
             </div>
             <label id="icon">
@@ -130,7 +130,7 @@
                     </div>
                     <div class="main-kolona padd-5 ">
                         <!-- assets/pages/vozila.html#d_pp -->
-                        <a href="assets/pages/vozila.html#rezervacija_"><input type="button" value="Vozila" class="btn-id"  onclick="upisDatuma()"/></a> 
+                        <a href="assets/pages/vozila.html#rezervacija_"><input type="button" value="Vozila" class="btn-id"  onclick="upisDatuma(); uspesanIzbor();"/></a> 
                     </div>
                 </div>
             </form>
@@ -258,7 +258,7 @@
                     <form action="GET">
                        <table>
                            <tr>
-                               <td><label for="ime">Ime:</label></td>
+                               <td id="kontaktIme"><label for="ime">Ime:</label></td>
                                <td><input type="text" name="ime" id="ime"></td>
                            </tr>
                            <tr>
@@ -275,7 +275,7 @@
                         </tr>
                        </table>
                        <div class="main-red">
-                            <input type="button" value="Pošalji poruku" class="btn-id" /> 
+                            <input type="button" value="Pošalji poruku" onclick="check();" class="btn-id" /> 
                        </div>
                     </form>
                 </div>
