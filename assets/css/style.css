@@ -347,10 +347,18 @@ a.btn:hover{
     padding: 10px !important;
     margin: 0px !important;
 }
-.fa-cc-mastercard,.fa-cc-visa,.fa-cc-diners-club,.fa-cc-paypal{
+#p-0-m{
+    margin-top: 0px;
+    padding-top: 0px!important;
+}
+.fa-cc-mastercard,.fa-cc-visa,.fa-cc-diners-club,.fa-cc-paypal,.fa-instagram,.fa-facebook,.fa-twitter,.fa-sitemap{
     color: white;
     margin-right: 20px;
     font-size: 32px;
+}
+.fa-instagram:hover,.fa-facebook:hover,.fa-twitter:hover, .fa-sitemap:hover{
+    color: rgba(0, 0, 0, 0.8);
+    transition: 0.4s;
 }
 .clr-siz-p{
     color: white;
