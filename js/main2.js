@@ -43,7 +43,6 @@ function onl(){
     document.getElementById("vremeVracanja2").value = v_vr;
     localStorage.removeItem("v_vracanja");
 
-    var vozila_lab = document.getElementById("lab_js");
 }    
 
 function uspesanIzbor(){
@@ -154,7 +153,7 @@ function Reg(){
 }
   
 function skodaFIzbor(){
-    document.getElementById("izbor_auta").value = "Škoda Fabia 1.2 HTP";
+    document.getElementById("izbor_auta").value = "Škoda Fabia 1.2 HTP"
 }
 function peugeotIzbor(){
     document.getElementById("izbor_auta").value = "Peugeot 308 1.6 HDI";
