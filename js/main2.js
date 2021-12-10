@@ -77,7 +77,7 @@ function Reg(){
    
 
     if(a == null || a == '' || b == null || b == '' || c == null || c == '' || d == null || d == '' || ime.value =='' || ime.value == null || prezime.value == '' || prezime.value == null || email.value == '' || email.value == null || telefon.value == '' || telefon.value == null || automobil.value == null || automobil.value =='izaberi'){
-        alert("greska! popunite sva polja");
+        alert("Molim vas, popunite sva polja!");
         
         if(!ime.value.match(Text)){
             ime.classList.add('badForm-border');
@@ -149,34 +149,90 @@ function Reg(){
         return false;
     }
     else{
-        alert("Hvala što koristite naše usluge, vaše vozilo: " + automobil.value + " je rezervisano za vas od " + a + ":" + c + " do " + b + ":" + d);
+        alert("Hvala što koristite naše usluge, vaše vozilo: " + automobil.value + " je rezervisano za vas od " + a + " do " + b);
     }
 }
   
+function skodaFIzbor(){
+    document.getElementById("izbor_auta").value = "Škoda Fabia 1.2 HTP";
+}
+function peugeotIzbor(){
+    document.getElementById("izbor_auta").value = "Peugeot 308 1.6 HDI";
+}
+function golfIzbor(){
+    document.getElementById("izbor_auta").value = "Golf VII DSG";
+}
+function skodaRIzbor(){
+    document.getElementById("izbor_auta").value = "Škoda Rapid 2016";
+}
+function mercedesIzbor(){
+    document.getElementById("izbor_auta").value = "Mercedes class A";
+}
+function golfVIzbor(){
+    document.getElementById("izbor_auta").value = "Golf VII Karavan";
+}
+function renaultIzbor(){
+    document.getElementById("izbor_auta").value = "Renault Clio";
+}
+function skodaOIzbor(){
+    document.getElementById("izbor_auta").value = "Škoda OKtavia";
+}
 
 
+// Validacija kontakt forme
+function check(){
 
-// // validacija kontakt forme
-// function check(){
+    var ime_ = document.getElementById("ime_");
+    var prezime_ = document.getElementById("prezime_");
+    var email_ = document.getElementById("email_");
+    var poruka_ = document.getElementById("poruka_");
 
-//     //validacija imena
+    var Text = /^[a-zA-z]+$/;
+    var Email = /^[a-zA-z\-0-9]+\@[a-zA-z]+\.[a-z]{2,3}$/; 
 
-//     var kontaktIme = document.getElementById("ime").value;
-//     var error = document.getElementById("kontaktIme");
-//     if(kontaktIme.length > 10 || kontaktIme.length == "" || kontaktIme == null)
-//         {
-//             error.innerHTML="Pogrešan unos";
-//             kontaktIme.addClass("badForm");
-//         }
-// }
-
-
-// if(datum_p_provera != "" && vreme_p_provera != "" && datum_v_provera != "" && vreme_v_provera != "" && datum_p_provera > datePattern && datum_v_provera > datum_p_provera)
-// {
-//     blok.classList.add("blok-rez-style");
-//     blok.innerHTML="<div id='brisanje'><p>Datum preuzimanja: " + datum_p_provera + "</p><p> Vreme preuzimanja: " + vreme_p_provera + "h</p><p> Datum vraćanja: "  + datum_v_provera + "</p><p> Vreme vraćanja: " + vreme_v_provera + "h </p><p><a href='#' id='dugme'>Potvrdi</a></p></div>";
-//     document.getElementById("dugme").addEventListener("click",()=>{
-//         blok.removeChild(blok.childNodes[0]);
-//         blok.classList.remove("blok-rez-style");
-//     })
-// }
+    if(ime_.value == null || ime_.value == "" || prezime_.value == null || prezime_.value == "" || email_.value == null || email_.value == "" || poruka_.value == null || poruka_.value == "")
+    {
+        alert("Molim vas, popunite sva polja!");
+        
+        if(!ime_.value.match(Text)){
+            ime_.classList.add('badForm-border');
+            ime_.value = "";
+        }else{
+            ime_.classList.add('goodForm-border');
+        }
+        if(!prezime_.value.match(Text)){
+            prezime_.classList.add('badForm-border');
+            prezime_.value = "";
+        }else{
+            prezime_.classList.add('goodForm-border');
+        }
+        if(!email_.value.match(Email)){
+            email_.classList.add('badForm-border');
+            email_.value = "";
+        }else{
+            email_.classList.add('goodForm-border');
+        }
+        if(poruka_.value == null || poruka_.value == ""){
+            poruka_.classList.add('badForm-border');
+            poruka_.value = "";
+        }else{
+            poruka_.classList.add('goodForm-border');
+        }
+        return false;
+    }
+    else{
+        var poruka = document.getElementById("poruka");
+        poruka.innerHTML = "<p>Poruka uspešno poslata!</p>";
+        poruka.classList.add('porukaStyle');
+            ime_.value = "";
+            ime_.classList.add('goodForm-border');
+            prezime_.value = "";
+            prezime_.classList.add('goodForm-border');
+            email_.value = "";
+            email_.classList.add('goodForm-border');
+            poruka_.value = "";
+            poruka_.classList.add('goodForm-border');
+        document.getElementById("box").classList.add("goodForm-border");
+        return false;
+    }
+}
