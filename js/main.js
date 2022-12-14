@@ -161,7 +161,7 @@ window.addEventListener('load', (event) => {
         }
         document.getElementById("infFuter").innerHTML = ispis; 
     
-    //console.log(url);
+    console.log(url);
     //vozila.html
     if(url == "/rentacar/assets/pages/vozila.html"){
         var meni = "<ul>";
