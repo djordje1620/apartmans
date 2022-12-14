@@ -61,7 +61,7 @@ window.addEventListener('scroll', function() {
 
 window.addEventListener('load', (event) => {
     //index.html
-    if(url == "/index.html" || url == "/"){
+    if(url == "/rentacar/index.html" || url == "/rentacar/"){
 
         
         
@@ -163,7 +163,7 @@ window.addEventListener('load', (event) => {
     
     //console.log(url);
     //vozila.html
-    if(url == "/assets/pages/vozila.html"){
+    if(url == "/rentacar/assets/pages/vozila.html"){
         var meni = "<ul>";
         for(n in nizTekst){
             if(nizTekst[n]=="Autor"){
