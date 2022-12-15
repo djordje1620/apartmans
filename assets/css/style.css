@@ -549,3 +549,6 @@ a.btn:hover{
 .pozadinaIspisPoruke{
     background-color: rgba(4, 123, 4, 0.783);
 }
+.pozadinaIspisPorukeErr{
+    background-color: rgba(161, 39, 33, 0.783);
+}

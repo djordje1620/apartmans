@@ -1,6 +1,6 @@
 let vreme = ["00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
-let nizHref = ["#","#naslov1","#usloviZakupa","#kontakt1","assets/pages/vozila.html","https://djordje1620.github.io/portfolio.github.io/portfolio/"];
-let nizTekst = ["Početna","O nama","Uslovi zakupa","Kontakt","Vozila","Autor"];
+let nizHref = ["#","#naslov1","#usloviZakupa","#kontakt1","assets/pages/vozila.html","https://djordje1620.github.io/portfolio.github.io/portfolio/","dokumentacija.pdf"];
+let nizTekst = ["Početna","O nama","Uslovi zakupa","Kontakt","Vozila","Autor","Dokumentacija"];
 let nizMeniKlase = ["activ icon1", "icon1", "icon1", "icon1", "icon1"];
 let oNama = ["Želite da rentirate novo i pouzdano rent a car vozilo?","Na pravom ste mestu. Rent a car Beograd uspešno posluje više od 15 godina. Svoje poslovanje usmerili smo na pružanje kvalitetnih usluga rentiranja vozila, po najnižim cenama. Uz profesionalni pristup i poštovanje vaših želja, pomoći ćemo vam da veoma brzo i lako pronađete pravi automobil za svoje potrebe. Nudimo širok izbor novih, udobnih i bezbednih automobila koje možete iznajmiti u centru ili bilo kom drugom delu Beograda. Rent a car vozilo dovozimo na vašu adresu."," Sva naša rent a car vozila su kasko osigurana, pa ne postoji rizik od potencijalne štete.","Bezbednost i zadovoljstvo klijenata su nam uvek na prvom mestu i to je ono što vas uvek vraća na našu adresu.","Za rentiranje vozila na duži vremenski period nudimo specijalne uslove i popuste. Plaćanje rent a car usluga vrši se gotovinom ili kreditnom karticom.","Godine poslovanja sa zadovoljnim klijentima,kako domaćim, tako i stranim su naša najbolja preporuka.","Rezervišite rent a car već danas. Pozovite nas odmah na: <span class='clr-blck'>+38169 37 63 31</span>"];
 let zastoMi = ["Preuzimanje vozila na aerodromu","Isporuka vozila na vašoj adresi","Bez depozita","Zeleni karton","Navigacija","Zimske gume i lanci","Neograničena kilometraža"];
@@ -38,7 +38,7 @@ window.addEventListener('scroll', function() {
 
 window.addEventListener('load', (event) => {
     //index.html
-    if(url == "/index.html" || url == "/"){
+    if(url == "/rentacar/index.html" || url == "/rentacar/"){
 
         var meni = "<ul>";
         for(n in nizTekst){
@@ -118,6 +118,8 @@ window.addEventListener('load', (event) => {
                 if(nameValidate("ime_") && nameValidate("prezime_") && emailValidate("email_") && messageValidate("poruka_")){
                     document.getElementById("ispisPoruke").innerText="Uspesno ste poslali poruku!";
                     document.getElementById("ispisPoruke").classList.add("pozadinaIspisPoruke");
+                document.getElementById("ispisPoruke").classList.remove("pozadinaIspisPorukeErr");
+
                 }
                 else{
                     document.getElementById("ispisPoruke").innerText="";
@@ -127,6 +129,8 @@ window.addEventListener('load', (event) => {
             else{
                 document.getElementById("ispisPoruke").innerText="Morate popuniti sva polja!";
                 document.getElementById("ispisPoruke").classList.add("pozadinaIspisPoruke");
+                document.getElementById("ispisPoruke").classList.add("pozadinaIspisPorukeErr");
+
             }
         }); 
         
@@ -135,9 +139,9 @@ window.addEventListener('load', (event) => {
 //index.html || vozila.html
     ispis=`<p class="clr-siz-p">Rent a car Beograd možete platiti gotovinom ili elektronskim karticama</p><p>`;
         for(ik in ikoniceFuter){
-            ispis+= `<i href="${ikoniceHref[ik]}" class="${ikoniceFuter[ik]}"></i>`;
+            ispis+= `<a href="${ikoniceHref[ik]}"> <i class="${ikoniceFuter[ik]}"></i></a>`;
         }
-        if(url == "/index.html"){
+        if(url == "/rentacar/index.html"){
             ispis+= `</p><p>Rent a car pruža iznajmljivanje pouzadnih vozila poznatih svetskih proizvođača uz najbolji odnos cena – kvalitet.</p><a href="assets/pages/vozila.html#rezervacija_" class="btn">Rezervišite <i class="fas fa-arrow-right"></i></a>`;
         }
         else{
@@ -153,7 +157,7 @@ window.addEventListener('load', (event) => {
     
     console.log(url);
     //vozila.html
-    if(url == "/assets/pages/vozila.html"){
+    if(url == "/rentacar/assets/pages/vozila.html"){
         var meni = "<ul>";
         for(n in nizTekst){
             if(nizTekst[n]=="Autor"){
@@ -162,8 +166,12 @@ window.addEventListener('load', (event) => {
                     </li>`
             }
             else{
-                
-                if(nizTekst[n]== "Vozila"){
+                if(nizTekst[n]=="Dokumentacija"){
+                    meni+=`<li>
+                            <a href="../../${nizHref[n]}" class="${nizMeniKlase[n]}">${nizTekst[n]}</a>
+                            </li> `;
+                }
+                else if(nizTekst[n]== "Vozila"){
                     meni+=`  
                             <li>
                             <a href="#" class="${nizMeniKlase[n]}">${nizTekst[n]}</a>
@@ -175,6 +183,7 @@ window.addEventListener('load', (event) => {
                     </li>`;
                 }
             }
+            
             }
             meni += "</ul>";
             document.getElementById("meni").innerHTML = meni;
@@ -269,23 +278,56 @@ window.addEventListener('load', (event) => {
         var emailV = document.getElementById("emailVozila").value;
         var locPr = document.getElementById("lokR");
         var locVr = document.getElementById("lokV");
-        var izabranoV = document.getElementById("izbor_auta");
+        var izabranoV = document.getElementById("izbor_auta").value;
         var datumOd = document.getElementById("dPreuzimanja").value;
         var datumDo = document.getElementById("dVracanja").value;
+        const date = new Date();
 
 
-        if(imeV != "" && emailV != "" && locPr.value != "Izaberi" && locVr.value != "Izaberi" && izabranoV.value != "Izaberi"){
-            if(nameValidate("imeR") && emailValidate("emailVozila")){
-                document.getElementById("ispisP").innerText=`Poštovani/a ${imeV} uspešno ste rezervisali ${izabranoV.value} od ${datumOd} do ${datumDo}`;
+        if(imeV != "" && emailV != "" && locPr.value != "Izaberi" && locVr.value != "Izaberi" && izabranoV != "Izaberi"){
+            if(nameValidate("imeR") && emailValidate("emailVozila") && datumOd<datumDo){
+                var vozilo = "";
+                console.log(izabranoV);
+                switch(izabranoV) {
+                      case "0": 
+                        vozilo = "Škodu Fabiu";
+                      break;
+                        case "1":
+                        vozilo="Peugeot 308";
+                      break;
+                      case "2":
+                        vozilo="Golf VII";
+                      break;
+                      case "3":
+                        vozilo="Škodu Rapid";
+                      break;
+                      case "4":
+                        vozilo="Mercedesa";
+                      break;
+                      case "5":
+                        vozilo="Golfa VII karvana";
+                      break;
+                      case "6":
+                        vozilo="Renault Clio";
+                      break;
+                      case "7":
+                        vozilo="Škodu Oktaviu";
+                      break;
+                  }
+                document.getElementById("ispisP").innerText=`Poštovani/a ${imeV} uspešno ste rezervisali ${vozilo} od ${datumOd} do ${datumDo}`;
+                document.getElementById("ispisP").classList.remove("pozadinaIspisPorukeErr");
                 document.getElementById("ispisP").classList.add("pozadinaIspisPoruke");
+
             }
             else{
-                document.getElementById("ispisP").innerText="";
+                document.getElementById("ispisP").innerText="Morate uneti datum koji je nakon datuma preuzimanja vozila";
                 document.getElementById("ispisP").classList.remove("pozadinaIspisPoruke");
+                document.getElementById("ispisP").classList.add("pozadinaIspisPorukeErr");
             }
         }else
         {
-            alert("HAOS");
+                document.getElementById("ispisP").innerText="Morate popuniti sva polja!";
+                document.getElementById("ispisP").classList.add("pozadinaIspisPorukeErr");
         }
 
     });
