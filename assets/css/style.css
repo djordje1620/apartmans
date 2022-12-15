@@ -340,6 +340,9 @@ a.btn:hover{
     padding: 20px;
     color: white;
 }
+.text-1 table tr > td:last-of-type{
+    padding: 5px 0px 0px 0px;
+} 
 .text-1 table tr td input[type=text]{
     border-radius: 2px;
     padding: 2px;
@@ -401,6 +404,12 @@ a.btn:hover{
 .foot p{
     padding: 0px;
     margin: 0px;
+}
+#kontakt h5{
+    font-size: 15px;
+    padding: 0px;
+    margin: 0px;
+    color: rgb(255, 51, 51);
 }
 #back-v{
     width: 100%;
@@ -526,5 +535,17 @@ a.btn:hover{
     width:80%;
     margin: 50px auto;
     box-shadow:0 0 20px rgb(73, 72, 72), 0 0 40px #353230e0, 0 0 20px #6f6161;
-    height: 400px;
+}
+.err{
+    border: 3px solid red;
+}
+.succes{
+    border: 3px solid greenyellow;
+}
+#ispisPoruke,#ispisP{
+    padding: 30px;
+    color: white;
+}
+.pozadinaIspisPoruke{
+    background-color: rgba(4, 123, 4, 0.783);
 }

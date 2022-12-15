@@ -6,30 +6,7 @@ let oNama = ["Želite da rentirate novo i pouzdano rent a car vozilo?","Na pravo
 let zastoMi = ["Preuzimanje vozila na aerodromu","Isporuka vozila na vašoj adresi","Bez depozita","Zeleni karton","Navigacija","Zimske gume i lanci","Neograničena kilometraža"];
 let nizIkonice = ["fas fa-car","fas fa-map-marked","fas fa-hand-holding-medical","fas fa-route"];
 let nizNazivIkonica = ["Nova vozila","Visok nivo opreme","Osigurana vozila","Dostava 24/7"];
-let kontakt = ` <div class="text-1 txt-col-white wid-main3"><h3 class="clr-blck">Kontaktirajte nas</h3><p>
-    Rezervacije automobila ili slanje poruka možete izvršiti i preko ove online forme.
-    Na sve poruke odgovaramo u najkraćem mogućem roku.</p><ul><li><i class="fas fa-phone"></i> 0654346611</li><li><i class="fas fa-envelope"></i> rentacarbeograd@gmail.com</li><li><i class="fas fa-map-marker-alt"></i>Bulevar kralja Aleksandra 334, Beograd</li></ul></div><div class="text-1 main-circle-color wid-main3 wid-main4 padd-10 padd-4" id="box">
-<form name="forma_index" onsubmit="return check();" >
-<table>
-    <tr>
-        <td><label for="ime">Ime:</label></td>
-        <td><input type="text" name="ime" id="ime_"></td>
-    </tr>
-    <tr>
-        <td><label for="prezime">Prezime:</label></td>
-        <td><input type="text" name="prezime" id="prezime_"></td>
-    </tr>
-    <tr>
-        <td><label for="email">Email:</label></td>
-        <td><input type="text" name="email" id="email_"></td>
-    </tr>
-    <tr>
-        <td ><label for="poruka">Poruka:</label></td>
-        <td><textarea name="poruka" id="poruka_" cols="30" rows="3"></textarea></td>
-    </tr>
-</table>
-<div class="main-red" id="poruka">
-<input type="button" name="submit" value="Pošalji poruku" class="btn-id" id="btnPosalji"/> </div></form></div>`;
+let kontakt = ` `;
 
 let ikoniceFuter = ["fab fa-cc-mastercard","fab fa-cc-visa","fab fa-cc-diners-club","fab fa-cc-paypal","fab fa-instagram","fab fa-facebook","fab fa-twitter","fas fa-sitemap"];
 let ikoniceHref = ["#","#","#","#","https://www.instagram.com/","https://www.facebook.com/","https://twitter.com/","sitemap.xml"];
@@ -38,7 +15,7 @@ let infFuter = ["Rent a Car Beograd", "Bulevar kralja Aleksandra 334, Beograd", 
 
 //vozlila
 let nazivVozila = ["Škoda Fabia 1.2 HTP","Peugeot 308 1.6 HDI","Golf VII DSG","Škoda Rapid 2016","Mercedes class A","Golf VII Karavan","Renault Clio","Škoda Oktavia"];
-let imgVozila = ["skoda.jfif","peugeot.jpg","golf.jpg","skoda-rapid7.jpg","mercedes.jpg","golf_karavan.jpg","reno_clio.jpg","skoda-octavia.jpg"];
+let imgVozila = ["skoda.jpg","peugeot.jpg","golf.jpg","skoda-rapid7.jpg","mercedes.jpg","golf_karavan.jpg","reno_clio.jpg","skoda-octavia.jpg"];
 let menjacVozila = ["manual","manual","automatic","manual","manual","manual","manual","manual"];
 let gorivoVozila = ["benzin","dizel","dizel","benzin","dizel","dizel","dizel","dizel"];
 let mestaVozila = ["4","5","5","5","4","5","4","5"];
@@ -61,12 +38,7 @@ window.addEventListener('scroll', function() {
 
 window.addEventListener('load', (event) => {
     //index.html
-    if(url == "/rentacar/index.html" || url == "/rentacar/"){
-
-        
-        
-
-
+    if(url == "/index.html" || url == "/"){
 
         var meni = "<ul>";
         for(n in nizTekst){
@@ -85,10 +57,7 @@ window.addEventListener('load', (event) => {
             document.getElementById("meni").innerHTML = meni;
 
         var ispis = "";
-        document.getElementById("kontakt").innerHTML = kontakt;
         document.getElementById("klik1").addEventListener("click", function(){
-            let ispis = kontakt;
-            document.getElementById("kontakt").innerHTML = ispis;
         });
     
         document.getElementById("klik2").addEventListener("click", function(){
@@ -136,10 +105,31 @@ window.addEventListener('load', (event) => {
                 </div>`;
         }
         document.getElementById("usloviZakupa").innerHTML = ispis;
+        
 
         document.getElementById("btnPosalji").addEventListener('click',function(){
-            nameValidate('ime_');
-        });
+            
+            var ime = document.getElementById("ime_").value
+            var prezime = document.getElementById("prezime_").value;
+            var message = document.getElementById("poruka_").value;
+            var email = document.getElementById("email_").value;
+
+            if(ime != "" && prezime != "" && message != "" && email != ""){
+                if(nameValidate("ime_") && nameValidate("prezime_") && emailValidate("email_") && messageValidate("poruka_")){
+                    document.getElementById("ispisPoruke").innerText="Uspesno ste poslali poruku!";
+                    document.getElementById("ispisPoruke").classList.add("pozadinaIspisPoruke");
+                }
+                else{
+                    document.getElementById("ispisPoruke").innerText="";
+                    document.getElementById("ispisPoruke").classList.remove("pozadinaIspisPoruke");
+                }
+            }
+            else{
+                document.getElementById("ispisPoruke").innerText="Morate popuniti sva polja!";
+                document.getElementById("ispisPoruke").classList.add("pozadinaIspisPoruke");
+            }
+        }); 
+        
     }
     
 //index.html || vozila.html
@@ -163,7 +153,7 @@ window.addEventListener('load', (event) => {
     
     console.log(url);
     //vozila.html
-    if(url == "/rentacar/assets/pages/vozila.html"){
+    if(url == "/assets/pages/vozila.html"){
         var meni = "<ul>";
         for(n in nizTekst){
             if(nizTekst[n]=="Autor"){
@@ -244,8 +234,8 @@ window.addEventListener('load', (event) => {
                 i++;
         }, 3000);
 
-        ispisVozila = `<select name="izbor_auta" id="izbor_auta">
-        <option value="izaberi" selected>Izaberi</option>`;
+        ispisVozila = `<select name="izbor_auta" id="izbor_auta" onblur="selectValidate('izbor_auta')">
+        <option value="Izaberi" selected>Izaberi</option>`;
         for(v in nazivVozila){
         ispisVozila +=`<option value="${v}">${nazivVozila[v]}</option>`;
         }
@@ -269,6 +259,41 @@ window.addEventListener('load', (event) => {
     localStorage.removeItem("datumVracanja");
     localStorage.removeItem("vrPreuz");
     localStorage.removeItem("vrVrac");
+
+
+
+
+    document.getElementById("rez").addEventListener('click',function(){
+
+        var imeV = document.getElementById("imeR").value
+        var emailV = document.getElementById("emailVozila").value;
+        var locPr = document.getElementById("lokR");
+        var locVr = document.getElementById("lokV");
+        var izabranoV = document.getElementById("izbor_auta");
+        var datumOd = document.getElementById("dPreuzimanja").value;
+        var datumDo = document.getElementById("dVracanja").value;
+
+
+        if(imeV != "" && emailV != "" && locPr.value != "Izaberi" && locVr.value != "Izaberi" && izabranoV.value != "Izaberi"){
+            if(nameValidate("imeR") && emailValidate("emailVozila")){
+                document.getElementById("ispisP").innerText=`Poštovani/a ${imeV} uspešno ste rezervisali ${izabranoV.value} od ${datumOd} do ${datumDo}`;
+                document.getElementById("ispisP").classList.add("pozadinaIspisPoruke");
+            }
+            else{
+                document.getElementById("ispisP").innerText="";
+                document.getElementById("ispisP").classList.remove("pozadinaIspisPoruke");
+            }
+        }else
+        {
+            alert("HAOS");
+        }
+
+    });
+
+
+
+
+
   });
 function izborVozila(i){
     document.getElementById("izbor_auta").value = i;
@@ -308,11 +333,55 @@ function nameValidate(inputName) {
     var erIme = new RegExp(/^[A-ZČĆŽŠĐ][a-z]{1,20}$/);
 
     if(erIme.test(ime.value)){
-        alert("oke");
-        // ime.classList.remove("err");
-        // ime.classList.add("succes");
+        ime.classList.remove("err");
+        ime.classList.add("succes");
+        return true;
     }else{
         ime.classList.remove("succes");
         ime.classList.add("err");
+        return false;
+    }
+}
+function emailValidate(inputEmail) {
+    var email = document.getElementById(inputEmail);
+    var erEmail = new RegExp(/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2-8})?$/);
+
+    if(erEmail.test(email.value)){
+        email.classList.remove("err");
+        email.classList.add("succes");
+        return true;
+    }else{
+        email.classList.remove("succes");
+        email.classList.add("err");
+        return false;
+    }
+}
+function messageValidate(){
+    var message = document.getElementById("poruka_");
+    var tekst = document.getElementById("greska");
+
+    if(message.value.length > 50){
+        message.classList.remove("err");
+        message.classList.add("succes");
+        tekst.innerHTML= "";
+        return true;
+    }
+    else{
+        message.classList.remove("succes");
+        tekst.innerHTML= "Broj karaktera mora biti veci od 50";
+        message.classList.add("err");
+        return false;
+    }
+}
+function selectValidate(selectLocation){
+    var sel = document.getElementById(selectLocation);
+    if(sel.value == "Izaberi"){
+        sel.classList.remove("succes");
+        sel.classList.add("err");
+        return false;
+    }else{
+        sel.classList.remove("err");
+        sel.classList.add("succes");
+        return true;
     }
 }

@@ -19,7 +19,23 @@
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
-    
+    <script>
+        $(document).ready(function(){
+            $('#icon').click(function(){
+                $('ul').toggleClass('show')
+            });
+        });   
+        $(document).ready(function(){
+            $('#icon').click(function(){
+                $('nav').toggleClass('rgba')
+            });
+        }); 
+        $(document).ready(function(){
+            $('.icon1').click(function(){
+                $('ul').toggleClass('show')
+            });
+        }); 
+    </script>
     <header>
         <div id="back-img">
             <div id="text-1" class="disp_none">
@@ -137,7 +153,44 @@
                <div> <a class="btn border_1 btn-1" id="klik2">Lokacija </a></div>
             </div>
             <div class="main-3 main-flex txt-col-white main-kolona21 " id="kontakt">
-                
+                <div class="text-1 txt-col-white wid-main3"><h3 class="clr-blck">Kontaktirajte nas</h3><p>
+                    Rezervacije automobila ili slanje poruka možete izvršiti i preko ove online forme.
+                    Na sve poruke odgovaramo u najkraćem mogućem roku.</p><ul><li><i class="fas fa-phone"></i> 0654346611</li><li><i class="fas fa-envelope"></i> rentacarbeograd@gmail.com</li><li><i class="fas fa-map-marker-alt"></i>Bulevar kralja Aleksandra 334, Beograd</li></ul>
+                    <p id="ispisPoruke"></p>
+                </div>
+
+                <div class="text-1 main-circle-color wid-main3 wid-main4 padd-10 padd-4" id="box">
+                    
+                    <form name="forma_index">
+                    <table>
+                        <tr>
+                            <td><label for="ime">Ime:</label></td>
+                            <td><input type="text" name="ime" id="ime_" onblur="nameValidate('ime_')"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="prezime">Prezime:</label></td>
+                            <td><input type="text" name="prezime" id="prezime_" onblur="nameValidate('prezime_')"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="text" name="email" id="email_" onblur="emailValidate('email_')"/></td>
+                        </tr>
+                        <tr>
+                            <td ><label for="poruka">Poruka:</label></td>
+                            <td>
+                                <textarea name="poruka" id="poruka_" cols="30" rows="3" onblur="messageValidate()"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <h5 id="greska"></h5>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="main-red" id="poruka">
+                    <input type="button" name="submit" value="Pošalji poruku" class="btn-id" id="btnPosalji"/> </div></form>
+                </div>
             </div>
 
         </div>

@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="main-1 bg1-main">
-            <div class="heig-main-11 txt-1-color">
+            <div class="txt-1-color">
                 <h2 id="rezervacija_" class="size-h2">Rezervacija vozila</h2>
                 <form name="forma">
                     <div id="rezVozila">
@@ -66,7 +66,7 @@
                             <tr>
                                 <td><label for="lokR">Lokacija preuzimanja:</label></td>
                                 <td>
-                                    <select name="lokR" id="lokR">
+                                    <select name="lokR" id="lokR" onblur="selectValidate('lokR')">
                                         <option value="Izaberi">Izaberite...</option>
                                         <option value="Beograd">Beograd</option>
                                     </select>
@@ -88,7 +88,7 @@
                             <tr>
                                 <td><label for="lokV">Lokacija vraćanja:</label></td>
                                 <td>
-                                    <select name="lokV" id="lokV">
+                                    <select name="lokV" id="lokV" onblur="selectValidate('lokV')">
                                         <option value="Izaberi">Izaberite...</option>
                                         <option value="Beograd">Beograd</option>
                                     </select>
@@ -108,13 +108,13 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><label for="imePrezimeR">Ime i prezime:</label></td>
-                                <td> <input type="text" id="imePrezimeR" name="imePrezimeR" /></td>
+                                <td><label for="imeR">Ime:</label></td>
+                                <td> <input type="text" id="imeR" name="imeR" onblur="nameValidate('imeR')"/></td>
                                 <td>
-                                    <label for="telefon">Telefon</label>
+                                    <label for="emailVozila">Email:</label>
                                 </td>
                                 <td>
-                                    <input type="text" name="telefon" id="telefon" placeholder="06X-XXX-XXXX">
+                                    <input type="text" name="emailVozila" id="emailVozila" onblur="emailValidate('emailVozila')"/>
                                 </td>
                                 <td>
                                     <label for="izborVozila">Izaberite:</label>
@@ -128,17 +128,17 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="button" value="Rezerviši" />
+                                    <input type="button" value="Rezerviši" id="rez" name="rez"/>
                                 </td>
                                 <td colspan="5">
-                                        tekst neki asdasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    <p id="ispisP"></p>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </form>
             </div>
-            <div class="img-1 wid-main3" id="slider">
+            <div class="wid-main3" id="slider">
                
             </div>
         </div>
